@@ -1,0 +1,13 @@
+# springboot 2.0 之前用server.context-path
+#server.contextPath: /SerializedService
+# springboot 2.0 之后 改为server.servlet.context-path
+server:
+  port: 9092
+  servlet:
+    context-path: /
+
+spring.data.mongodb.host: localhost
+spring.data.mongodb.database: admin
+spring.data.mongodb.port: 27017
+spring.data.mongodb.username: admin
+spring.data.mongodb.password: admin

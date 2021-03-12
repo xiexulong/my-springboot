@@ -1,0 +1,11 @@
+# springboot 2.0 之前用server.context-path
+#server.contextPath: /SerializedService
+# springboot 2.0 之后 改为server.servlet.context-path
+server:
+  port: 9093
+  servlet:
+    context-path: /
+
+spring.data.hbase.quorum: xxx
+spring.data.hbase.rootDir: xxx
+spring.data.hbase.nodeParent: xxx

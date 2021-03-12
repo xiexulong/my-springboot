@@ -1,0 +1,72 @@
+# springboot 2.0 之前用server.context-path
+#server.contextPath: /SerializedService
+# springboot 2.0 之后 改为server.servlet.context-path
+server:
+  port: 9090
+  servlet:
+    context-path: /
+
+spring.mvc.hiddenmethod.filter.enabled: true
+base.work.mode: dev
+swagger:
+  enabled: true
+  title: my-base module api
+  description: Starter for swagger 2.x
+  license: Apache License, Version 2.0
+  licenseUrl: https://www.apache.org/licenses/LICENSE-2.0.html
+  contact.name: xxl
+  contact.url: http://localhost:9090/xxl/hello
+  contact.email: 746278496@qq.com
+  base-package: com.xxl.controller
+  base-path: /**
+  exclude-path: /error, /ops/**
+
+# 数据库访问地址：http://localhost:9090/xxl/console/login.jsp
+# 配置 H2 数据库连接信息
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /console
+  datasource:
+    url: jdbc:h2:mem:xxldb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: xxl
+### 是否显示 SQL 语句
+  jpa:
+    show-sql: true
+hibernate.dialect: org.hibernate.dialect.H2Dialect
+hibernate.hbm2ddl.auto: create
+
+## DATA WEB 相关配置 {@link SpringDataWebProperties}
+## 分页大小 默认为 20
+spring.data.web.pageable.default-page-size: 3
+## 当前页参数名 默认为 page
+spring.data.web.pageable.page-parameter: pageNumber
+## 当前页参数名 默认为 size
+spring.data.web.pageable.size-parameter: pageSize
+## 字段排序参数名 默认为 sort
+spring.data.web.sort.sort-parameter: orderBy
+
+
+
+## Redis 配置
+## Redis数据库索引（默认为0）
+spring.redis.database: 0
+## Redis服务器地址
+spring.redis.host: 127.0.0.1
+## Redis服务器连接端口
+spring.redis.port: 6379
+## Redis服务器连接密码（默认为空）
+spring.redis.password:
+## 连接池最大连接数（使用负值表示没有限制）
+spring.redis.pool.max-active: 8
+## 连接池最大阻塞等待时间（使用负值表示没有限制）
+spring.redis.pool.max-wait: -1
+## 连接池中的最大空闲连接
+spring.redis.pool.max-idle: 8
+## 连接池中的最小空闲连接
+spring.redis.pool.min-idle: 0
+## 连接超时时间（毫秒）
+spring.redis.timeout: 0

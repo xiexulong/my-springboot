@@ -1,0 +1,7 @@
+# Project exclude paths
+/my-base/target/
+/my-data-elasticsearch/target/
+/my-data-hbase2/target/
+/my-data-mybatis/target/
+/my-freemarker/target/
+/my-webflux/target/

@@ -1,0 +1,30 @@
+# springboot 2.0 之前用server.context-path
+#server.contextPath: /SerializedService
+# springboot 2.0 之后 改为server.servlet.context-path
+server:
+  port: 9092
+  servlet:
+    context-path: /
+
+
+## 数据源配置
+spring.datasource.url: jdbc:mysql://localhost:3306/xxl_jdbc?useUnicode=true&characterEncoding=utf8
+spring.datasource.username: root
+spring.datasource.password: helloroot
+spring.datasource.driver-class-name: com.mysql.cj.jdbc.Driver
+
+## Mybatis 配置
+mybatis.typeAliasesPackage: com.xxl.model
+mybatis.mapperLocations: classpath:mapper/*.xml
+
+## Freemarker 配置
+## 文件配置路径
+spring.freemarker.template-loader-path: classpath:/web/
+spring.freemarker.cache: false
+spring.freemarker.charset: UTF-8
+spring.freemarker.check-template-location: true
+spring.freemarker.content-type: text/html
+spring.freemarker.expose-request-attributes: true
+spring.freemarker.expose-session-attributes: true
+spring.freemarker.request-context-attribute: request
+spring.freemarker.suffix: .ftl
